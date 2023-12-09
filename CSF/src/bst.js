@@ -49,4 +49,38 @@ export default class BST {
       return this.searchNode(node.right, value);
     }
   }
+
+  remove(value) {
+    const findNode = (node, val) => {
+      if (node === null) {
+        return null;
+      }
+
+      if (val < node.data) {
+        node.left = findNode(node.left, val);
+      } else if (val > node.data) {
+        node.right = findNode(node.right, val);
+      } else {
+        if (node.left === null) {
+          return node.right;
+        } else if (node.right === null) {
+          return node.left;
+        }
+
+        node.data = this.minValue(node.right);
+        node.right = findNode(node.right, node.data);
+      }
+      return node;
+    };
+
+    this.root = findNode(this.root, value);
+  }
+
+  minValue(node) {
+    let current = node;
+    while (current.left !== null) {
+      current = current.left;
+    }
+    return current.data;
+  }
 }

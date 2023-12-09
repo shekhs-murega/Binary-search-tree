@@ -60,4 +60,54 @@ beforeEach(() => {
   test('it should return false if the value is null', () => {
     expect(pbst.search(null)).toEqual(false);
   });
+  let bst;
+
+  beforeEach(() => {
+    bst = new BST();
+    bst.insert(new BSTNode(4));
+    bst.insert(new BSTNode(2));
+    bst.insert(new BSTNode(6));
+    bst.insert(new BSTNode(1));
+    bst.insert(new BSTNode(3));
+    bst.insert(new BSTNode(5));
+    bst.insert(new BSTNode(7));
+  });
+
+  test('it should remove a leaf node', () => {
+    bst.remove(1);
+    expect(bst.root.left.left).toBeNull();
+  });
+
+  test('it should remove a node with one child (left)', () => {
+    bst.remove(6);
+    expect(bst.root.right.data).toEqual(7);
+  });
+
+  test('it should remove a node with one child (right)', () => {
+    bst.remove(2);
+    expect(bst.root.left.data).toEqual(3);
+  });
+
+  test('it should remove a node with two children (left)', () => {
+    bst.remove(4);
+    expect(bst.root.data).toEqual(5);
+    expect(bst.root.left.data).toEqual(2);
+    expect(bst.root.right.data).toEqual(6);
+  });
+
+  test('it should remove a node with two children (right)', () => {
+    bst.remove(6);
+    expect(bst.root.data).toEqual(4);
+    expect(bst.root.left.data).toEqual(2);
+    expect(bst.root.right.data).toEqual(7);
+  });
+
+  test('it should return false if the node to be removed does not exist', () => {
+    expect(bst.remove(100)).toBeFalsy();
+  });
+
+  test('it should handle removing the root node', () => {
+    bst.remove(4);
+    expect(bst.root.data).toEqual(5);
+  });
 
