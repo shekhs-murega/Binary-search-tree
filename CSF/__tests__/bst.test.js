@@ -33,3 +33,31 @@ describe('Binary Search Tree', () => {
     expect(rootNode.right.data).toEqual(48);
   });
 });
+const pbst = new BST();
+
+beforeEach(() => {
+  pbst.insert(new BSTNode(4));
+  pbst.insert(new BSTNode(2));
+  pbst.insert(new BSTNode(6));
+  pbst.insert(new BSTNode(1));
+  pbst.insert(new BSTNode(3));
+  pbst.insert(new BSTNode(5));
+  pbst.insert(new BSTNode(7));  
+});
+
+  test('it should return true if the root node is equal to 4', () => {
+    expect(pbst.search(4)).toEqual(true);
+  });
+
+  test('it should return true if the value exists in the tree', () => {
+    expect(pbst.search(5)).toEqual(true);
+  });
+
+  test('it should return false if the value does not exist in the tree', () => {
+    expect(pbst.search(10)).toEqual(false);
+  });
+
+  test('it should return false if the value is null', () => {
+    expect(pbst.search(null)).toEqual(false);
+  });
+
