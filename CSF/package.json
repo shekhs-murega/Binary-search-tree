@@ -1,0 +1,13 @@
+{
+  "name": "binary-search-tree-library",
+  "version": "1.0.0",
+  "description": "Library for Binary Search Tree implementation in JavaScript",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "jest": "^24.9.0"
+  }
+}
