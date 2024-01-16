@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1705391690326" clover="3.2.0">
-  <project timestamp="1705391690327" name="All files">
-    <metrics statements="75" coveredstatements="70" conditionals="42" coveredconditionals="39" methods="19" coveredmethods="18" elements="136" coveredelements="127" complexity="0" loc="75" ncloc="75" packages="1" files="3" classes="3"/>
+<coverage generated="1705393331459" clover="3.2.0">
+  <project timestamp="1705393331460" name="All files">
+    <metrics statements="91" coveredstatements="86" conditionals="50" coveredconditionals="47" methods="23" coveredmethods="22" elements="164" coveredelements="155" complexity="0" loc="91" ncloc="91" packages="1" files="4" classes="4"/>
+    <file name="bfs.js" path="/home/shekinah/Moringa/Phase-3/Binary-search-tree/CSF/src/bfs.js">
+      <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="9" count="32" type="stmt"/>
+      <line num="13" count="28" type="stmt"/>
+      <line num="14" count="28" type="stmt"/>
+      <line num="18" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="17" type="stmt"/>
+      <line num="28" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="32" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="8" type="stmt"/>
+      <line num="34" count="8" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+    </file>
     <file name="bst-node.js" path="/home/shekinah/Moringa/Phase-3/Binary-search-tree/CSF/src/bst-node.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="4" count="216" type="stmt"/>
