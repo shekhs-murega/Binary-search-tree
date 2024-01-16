@@ -39,6 +39,31 @@ export default class Graph {
       this.adjacencyList.delete(name);
     }
   }
+  depthFirstReachable(startingNode, targetNode) {
+    if (!this.adjacencyList.has(startingNode) || !this.adjacencyList.has(targetNode)) {
+      return false;
+    }
+  
+    const stack = [startingNode];
+    const visited = new Set();
+  
+    while (stack.length) {
+      const currentNode = stack.pop();
+  
+      if (currentNode === targetNode) {
+        return true;
+      }
+  
+      visited.add(currentNode);
+  
+      const neighbors = this.adjacencyList.get(currentNode) || [];
+      for (const neighbor of neighbors) {
+        if (!visited.has(neighbor) && !stack.includes(neighbor)) {
+          stack.push(neighbor);
+        }
+      }
+    }
+  
+    return false;
+  }
 }
-  
-  
